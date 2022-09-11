@@ -14,6 +14,7 @@
                 <ul>
                     <li><a href="index.php?ruta=registros">Registros</a> </li>
                     <li><a href="index.php?ruta=ingreso">Ingreso</a> </li>
+                    <li><a href="index.php?ruta=fotos">Fotos</a> </li>
                     <li><a href="index.php?ruta=inicio">Inicio</a> </li>
                     <li><a href="index.php?ruta=salir">Salir</a> </li>
                 </ul>
@@ -28,6 +29,7 @@
                 if(
                     $_GET['ruta']=='registros' ||
                     $_GET['ruta']=='ingreso' ||
+                    $_GET['ruta']=='fotos' ||
                     $_GET['ruta']=='inicio' ||
                     $_GET['ruta']=='salir'
                 ){
