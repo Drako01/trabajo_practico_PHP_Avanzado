@@ -12,14 +12,14 @@
         <header>
             <nav id="botonera_principal">
                 <ul>
-                    <li><a href="index.php?ruta=registros">Registro</a> </li>
+                    <li><a href="index.php?ruta=registros">Registros</a> </li>
                     <li><a href="index.php?ruta=ingreso">Ingreso</a> </li>
                     <li><a href="index.php?ruta=inicio">Inicio</a> </li>
                     <li><a href="index.php?ruta=salir">Salir</a> </li>
                 </ul>
             </nav>
             <div id="marca">
-                <h1>Login</h1>
+                <h2>Login</h2>
             </div>
         </header>
         <section id="contenido">
@@ -38,7 +38,7 @@
                 
                 
             }else{
-                include 'pages/registro.php';
+                include 'pages/registros.php';
             }
             ?>
         </section>

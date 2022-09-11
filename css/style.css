@@ -1,6 +1,43 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+}
+
+/* Barra de Navegacion */
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    z-index: 100;
+    background: #f1f1f1;
+    height: auto;
+    line-height: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li a{
+    text-decoration: none;   
+    font-size: 22px;
+    margin-left: 20px;
+    color: darkcyan;
+}
+
+nav ul li a:hover {
+    color: #0b1169;
+    text-shadow: 1px 1px 2px #034c4d78;
+}
+
+#marca{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: bisque;
+    height: 10vh;
 }
 
 footer{
@@ -16,30 +53,4 @@ footer{
     height: 100vh;   
     display: block;
     margin: auto;
-}
-
-
-/* Barra de Navegacion */
-
-nav ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    z-index: 100;
-    background: #bbbbbb;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li a{
-    text-decoration: none;   
-    font-size: 22px;
-    margin-left: 20px;
-}
-
-#botonera_principal a:hover {
-    color: #0b1169;
-    text-shadow: 1px 1px 2px #034c4d78;
 }
