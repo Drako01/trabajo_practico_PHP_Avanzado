@@ -18,6 +18,7 @@
                     <li><a href="index.php?ruta=fotos">Nuestras Pizzas</a> </li>
                     <li><a href="index.php?ruta=acerca_de">Acerca de</a> </li>
                     <li><a href="index.php?ruta=ubicacion">Donde Estamos?</a> </li>
+                    <li><a href="index.php?ruta=contacto">Contacto</a> </li>
                 </ul>
             </nav>
 
@@ -29,7 +30,8 @@
                     $_GET['ruta'] == 'acerca_de' ||
                     $_GET['ruta'] == 'fotos' ||
                     $_GET['ruta'] == 'inicio' ||
-                    $_GET['ruta'] == 'ubicacion'
+                    $_GET['ruta'] == 'ubicacion' ||
+                    $_GET['ruta'] == 'contacto'
                 ) {
                     include 'pages/' . $_GET['ruta'] . '.php';
                 } else {

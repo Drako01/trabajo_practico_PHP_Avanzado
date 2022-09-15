@@ -1,3 +1,4 @@
+<section class="fotos_pizzas">
 <div class="titulo">Nuestras Especialidades</div>
 <div class="line"></div>
 <section class="productos">
@@ -32,3 +33,4 @@
     </section>
 </section>
 <div class="line"></div>
+</section>

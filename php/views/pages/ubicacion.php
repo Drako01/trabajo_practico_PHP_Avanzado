@@ -1,5 +1,5 @@
 <section class="mapa">
-    <div class="formulario">
+    <div class="formulario1">
         <p><strong>Dirección</strong>: Av. Le Vayer 1234</p>
         <p><strong>Teléfono</strong>: +541157614322</p>
         <p><strong>Email</strong>: contacto@newyorkpizza.com
