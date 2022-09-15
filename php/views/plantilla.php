@@ -46,7 +46,7 @@
         </section>
     </div>
 
-    <footer>        
+    <footer>
         <p>&COPY; Alejandro Di Stefano - Nivel Avanzado de PHP y MySQL</p>
     </footer>
 </body>
