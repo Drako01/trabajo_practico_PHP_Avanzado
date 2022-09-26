@@ -4,7 +4,7 @@
             <div class="row card-panel panel-body">
                 <div class="nombre titulo_prod">
                     <?php
-                    echo '<h2>Iniciar Sesión</h2>' ?></div><br>
+                    echo '<h2>Registrarse</h2>' ?></div><br>
                 <div class="input-field col s12"><label for="nombre" class="text-form01">Ingrese su Usuario: </label>
                     <input autocomplete="off" type="text" name="nombre" id="nombre" class="validate" required>
                 </div>
@@ -15,7 +15,11 @@
                     <input autocomplete="off" type="password" name="pass" id="pass" class="validate" required>
                 </div>
 
-                
+                <?php
+                require_once './php/controller/formulario.controlador.php';
+                $registro = ControladorFormularios::ctrRegistro();
+
+                ?>
 
             </div>
             <div class="button-field">
