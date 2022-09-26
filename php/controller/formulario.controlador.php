@@ -11,7 +11,7 @@ class ControladorFormularios{
                 "pass" => $_POST["pass"]
             );
 
-            require_once "./php/models/formularios.modelos.php";
+            
             $respuesta = ModuloFormularios::mdlRegistro($tabla, $datos);
             return $respuesta;
         }

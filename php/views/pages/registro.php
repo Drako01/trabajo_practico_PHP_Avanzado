@@ -15,10 +15,8 @@
                     <input autocomplete="off" type="password" name="pass" id="pass" class="validate" required>
                 </div>
 
-                <?php
-                require_once './php/controller/formulario.controlador.php';
+                <?php                
                 $registro = ControladorFormularios::ctrRegistro();
-
                 ?>
 
             </div>

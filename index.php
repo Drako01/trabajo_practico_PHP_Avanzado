@@ -10,6 +10,9 @@ require_once('./php/error_mannager.php');
 // --------------------------------------------
 
 require_once './php/controller/plantilla.controlador.php';
+require_once './php/controller/formulario.controlador.php';
+require_once "./php/models/formularios.modelos.php";
+
 
 $plantilla = new ControladorPlantilla();
 
