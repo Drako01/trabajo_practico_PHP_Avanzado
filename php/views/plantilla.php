@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,8 +24,10 @@
                     <li><a href="index.php?ruta=acerca_de">Acerca de</a> </li>
                     <li><a href="index.php?ruta=ubicacion">Donde Estamos?</a> </li>
                     <li><a href="index.php?ruta=contacto">Contacto</a> </li>
+                    <li><a href="index.php?ruta=usuarios_reg">Usuarios</a></li>
                     <li><a href="index.php?ruta=registro">Registro</a> </li>
                     <li><a href="index.php?ruta=login">Iniciar Sessión</a> </li>
+                    <li><a href="index.php?ruta=salir">Salir</a></li>
                 </ul>
             </nav>
 
@@ -37,8 +42,11 @@
                     $_GET['ruta'] == 'ubicacion' ||
                     $_GET['ruta'] == 'contacto' ||
                     $_GET['ruta'] == 'registro' ||
-                    $_GET['ruta'] == 'login'
-                ) {
+                    $_GET['ruta'] == 'editar' ||
+                    $_GET['ruta'] == 'usuarios_reg' ||
+                    $_GET['ruta'] == 'login' ||
+                    $_GET['ruta'] ==  'salir')
+                    {
                     include 'pages/' . $_GET['ruta'] . '.php';
                 } else {
                     include 'pages/error404.php';
