@@ -9,7 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabajo en PHP - Avanzado</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -29,7 +29,11 @@ session_start();
                     <li><a href="index.php?ruta=salir">Salir</a></li>
                 </ul>
             </nav>
+            <div class="fondo_usr">
+                <?php
 
+                ?>
+            </div>
         </header>
         <section id="contenido">
             <?php
@@ -44,8 +48,8 @@ session_start();
                     $_GET['ruta'] == 'editar' ||
                     $_GET['ruta'] == 'usuarios_reg' ||
                     $_GET['ruta'] == 'login' ||
-                    $_GET['ruta'] ==  'salir')
-                    {
+                    $_GET['ruta'] ==  'salir'
+                ) {
                     include 'pages/' . $_GET['ruta'] . '.php';
                 } else {
                     include 'pages/error404.php';
