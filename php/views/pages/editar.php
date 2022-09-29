@@ -6,7 +6,7 @@ if (isset($_GET["id"])) {
 }
 
 ?>
-<div class="usuarios_reg">
+<div class="usuarios_reg editar">
 
 	<form method="post">
 
