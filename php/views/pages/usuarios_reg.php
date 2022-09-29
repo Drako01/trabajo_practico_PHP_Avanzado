@@ -14,34 +14,41 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistro(null, null);
     <h4>Usuarios Registrados</h4>
 </div>
 <div class="users">
-    <?php foreach ($usuarios as $key => $value) : ?>
-        <div class="usuarios_reg">
-            <tr>
-                <div>
-                    <td>Id: <?php echo ($key + 1); ?></td>
-                    <td>Nombre: <?php echo $value["nombre"]; ?></td>
-                    <td>Email: <?php echo $value["email"]; ?></td>
-                    <td>Fecha: <?php echo $value["fecha"]; ?></td>
-                </div>
-                <div>
-                    <td>
-                        <a href="index.php?ruta=editar&id=<?php echo $value["id"]; ?>"><button class="boton">Editar</button></a>
-                    </td>
-                </div>
-                <div>
-                    <td>
-                        <form method="post">
-                            <input type="hidden" value="<?php echo $value["id"]; ?>" name="eliminarRegistro">
-                            <button type="submit" class="boton">Borrar</button>
-                            <?php
-                            $eliminar = new ControladorFormularios();
-                            $eliminar->ctrEliminarRegistro();
-                            ?>
-                        </form>
-                    </td>
-                </div>
-
-            </tr>
-        </div>
-    <?php endforeach ?>
+    <div class="usuarios_reg">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Fecha</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
+                </tr>
+            </thead>
+            <?php foreach ($usuarios as $key => $value) : ?>
+                <tbody>
+                    <tr>
+                        <td><?php echo ($key + 1); ?></td>
+                        <td><?php echo $value["nombre"]; ?></td>
+                        <td><?php echo $value["email"]; ?></td>
+                        <td><?php echo $value["fecha"]; ?></td>
+                        <td>
+                            <a href="index.php?ruta=editar&id=<?php echo $value["id"]; ?>"><button class="boton">Editar</button></a>
+                        </td>
+                        <td>
+                            <form method="post">
+                                <input type="hidden" value="<?php echo $value["id"]; ?>" name="eliminarRegistro">
+                                <button type="submit" class="boton">Borrar</button>
+                                <?php
+                                $eliminar = new ControladorFormularios();
+                                $eliminar->ctrEliminarRegistro();
+                                ?>
+                            </form>
+                        </td>
+                    <?php endforeach ?>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
 </div>

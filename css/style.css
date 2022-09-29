@@ -163,6 +163,10 @@ h3 {
     box-shadow: 2px 2px 10px rgb(88, 88, 88);
 }
 
+table thead tr{
+    background-color: #5499ee;
+    color: #f1f1f1;
+}
 
 .item img {
     width: 400px;
