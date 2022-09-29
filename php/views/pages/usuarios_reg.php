@@ -39,7 +39,7 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistro(null, null);
                         <td>
                             <form method="post">
                                 <input type="hidden" value="<?php echo $value["id"]; ?>" name="eliminarRegistro">
-                                <button type="submit" class="boton">Borrar</button>
+                                <button type="submit" class="boton" onclick="return eliminar_cont()">Borrar</button>
                                 <?php
                                 $eliminar = new ControladorFormularios();
                                 $eliminar->ctrEliminarRegistro();
@@ -52,3 +52,14 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistro(null, null);
         </table>
     </div>
 </div>
+<script type="text/javascript">
+    function eliminar_cont() {
+
+        if (confirm('Esta seguro de eliminar el registro?') == true) {
+            alert('El registro ha sido eliminado correctamente!');
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
