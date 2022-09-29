@@ -11,7 +11,7 @@ if (!isset($_SESSION["validarIngreso"])) {
 $usuarios = ControladorFormularios::ctrSeleccionarRegistro(null, null);
 ?>
 <div class="fondo">
-    <h2>Usuarios Registrados</h2>
+    <h4>Usuarios Registrados</h4>
 </div>
 <div class="users">
     <?php foreach ($usuarios as $key => $value) : ?>

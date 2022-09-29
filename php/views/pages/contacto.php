@@ -1,4 +1,3 @@
-
 <section class="body_contacto">
     <div class="form" id="contacto">
         <div class="section-container">

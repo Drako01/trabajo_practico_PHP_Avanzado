@@ -12,6 +12,14 @@
 
 /* Barra de Navegacion */
 
+nav {    
+    background: #f1f1f1;
+    width: 100%;
+    height: auto;
+    line-height: 56px;
+}
+
+
 nav ul {
     display: flex;
     flex-direction: row;
@@ -59,9 +67,9 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    font-size: 30px;
     color: #006191;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 #acerca {    
@@ -124,7 +132,7 @@ h3 {
 }
 
 .users{
-    padding: 3%;
+    padding: 5%;
     margin-bottom: 15vh;
 }
 
@@ -132,12 +140,12 @@ h3 {
     background-color: #5499ee;
     color: #f1f1f1;
     text-align: center;
-    padding: 30px 0;
+    padding: 20px 0;
     margin: 0;
 }
 
 .fondo h2{
-    text-shadow: 1px 1px 2px #000205;
+    text-shadow: 1px 1px 3px #000205;
 }
 
 .usuarios_reg{

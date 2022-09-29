@@ -30,20 +30,30 @@ class ControladorFormularios
     //Ingreso
     public function ctrIngreso()
     {
-        if (isset($_POST['email'])) {
+        if (isset($_POST['ingresoEmail'])) {
             $tabla = 'registros';
             $item = 'email';
-            $valor = $_POST['email'];
+            $valor = $_POST['ingresoEmail'];
 
             $respuesta = ModeloFormularios::mdlSeleccionarRegistro($tabla, $item, $valor);
-            if ($respuesta['email'] == $_POST['email'] && $respuesta['pass'] == $_POST['pass']) {
+            if ($respuesta['email'] == $_POST['ingresoEmail'] && $respuesta['pass'] == $_POST['ingresoPass']) {
                 $_SESSION['validarIngreso'] = "Ok";
 
                 echo '<script>
                 window.location = "index.php?ruta=inicio";
                 </script> ';
             } else {
-                echo '<div class="alert alert-danger">Error al Ingresar al Sistema, el Email o la Contraseña no coinciden</div>';
+                echo '                
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text" style="text-align: center; text-shadow: 1px 1px 3px #000;">      
+                                <h5>Error al Ingresar al Sistema, el Email o la Contraseña no coinciden.!</h5>
+                            </div>        
+                        </div>
+                    </div>
+                </div>                
+                ';
             }
         }
     }
@@ -63,30 +73,31 @@ class ControladorFormularios
                 'id' => $_POST['idUsuario'],
                 'nombre' => $_POST['actualizarNombre'],
                 'email' => $_POST['actualizarEmail'],
-                'pass' => $pass
+                'pass' => md5($pass)
             );
             $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
-            if($respuesta){
+            if ($respuesta) {
                 echo '<script>                            
                 window.location = "index.php?ruta=usuarios_reg";
-                </script> '; 
+                </script> ';
             }
         }
     }
 
     //Eliminar Registro
-    public function ctrEliminarRegistro(){
-        if(isset($_POST['eliminarRegistro'])){
+    public function ctrEliminarRegistro()
+    {
+        if (isset($_POST['eliminarRegistro'])) {
             $tabla = 'registros';
             $valor = $_POST['eliminarRegistro'];
 
             $respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
 
-            if($respuesta){
+            if ($respuesta) {
                 echo '<script>                
                 window.location = "index.php?ruta=usuarios_reg";
-                </script> '; 
+                </script> ';
             }
         }
     }

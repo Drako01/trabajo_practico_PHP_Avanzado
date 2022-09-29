@@ -6,10 +6,10 @@
                     <?php
                     echo '<h2>Iniciar Sesión</h2>' ?></div><br>                
                 <div class="input-field col s12"><label for="email" class="text-form01">Ingrese su Email: </label>
-                    <input autocomplete="off" type="email" name="email" id="email" class="validate" required>
+                    <input autocomplete="off" type="email" name="ingresoEmail" id="email" class="validate" required>
                 </div>
                 <div class="input-field col s12"><label for="pass" class="text-form01">Ingrese su Contraseña: </label>
-                    <input autocomplete="off" type="password" name="pass" id="pass" class="validate" required>
+                    <input autocomplete="off" type="password" name="ingresoPass" id="pass" class="validate" required>
                 </div>
 
                 <?php                
