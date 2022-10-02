@@ -34,9 +34,10 @@ class ControladorFormularios
             $tabla = 'registros';
             $item = 'email';
             $valor = $_POST['ingresoEmail'];
+            $pass_ing = $_POST['ingresoPass'];
 
             $respuesta = ModeloFormularios::mdlSeleccionarRegistro($tabla, $item, $valor);
-            if ($respuesta['email'] == $_POST['ingresoEmail'] && $respuesta['pass'] == $_POST['ingresoPass']) {
+            if ($respuesta['email'] == $_POST['ingresoEmail'] && $respuesta['pass'] == md5($pass_ing)) {
                 $_SESSION['validarIngreso'] = "Ok";
 
                 echo '<script>
