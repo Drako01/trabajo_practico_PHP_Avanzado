@@ -15,7 +15,7 @@ class ModeloFormularios
         $stmt->bindParam(":pass", $datos["pass"], PDO::PARAM_STR);
 
         if ($stmt->execute()) {
-            return "Ok";
+            return "ok";
         } else {
             print_r(Conexion::conectar()->errorInfo());
         }

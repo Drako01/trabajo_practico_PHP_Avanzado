@@ -18,21 +18,9 @@
                 <?php
                 $registro = ControladorFormularios::ctrRegistro();
                 if ($registro == "ok") {
-                    echo '<script> 
-                        if (window.history.replaceState){
-                        window.history.replaceState(null,null, window.location.href);
-                        }
-                        </script>';
-
                     echo '<div class="alert alert-success"> El usuario se ha registrado con éxito </div>';
                 }
-                if ($registro == "error"){
-                    echo '<script> 
-                    if (window.history.replaceState){
-                        window.history.replaceState(null,null, window.location.href);
-                    }
-                    </script>';
-                    
+                if ($registro == "error"){                    
                     echo '<div class="alerta alerta-danger"> Error, no se permiten caracteres especiales </div>';
                     }
                 ?>

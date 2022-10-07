@@ -54,7 +54,7 @@ class ControladorFormularios
 
             $respuesta = ModeloFormularios::mdlSeleccionarRegistro($tabla, $item, $valor);
             if ($respuesta['email'] == $valor && $respuesta['pass'] == $pass_ing) {
-                $_SESSION['validarIngreso'] = "Ok";
+                $_SESSION['validarIngreso'] = "ok";
 
                 echo '<script>
                 if ( window.history.replaceState ) {
