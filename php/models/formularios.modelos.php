@@ -35,9 +35,6 @@ class ModeloFormularios
             $stmt->execute();
 
             return $stmt->fetchAll();
-            $stmt->closeCursor();
-
-            $stmt = null;
         } else {
             $stmt = Conexion::conectar()->prepare("SELECT *, DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha FROM $tabla WHERE $item = :$item ORDER BY id DESC");
 
@@ -45,11 +42,10 @@ class ModeloFormularios
 
             $stmt->execute();
             return $stmt->fetch();
-            $stmt->closeCursor();
-
-            $stmt = null;
         }
-    
+        $stmt->closeCursor();
+
+        $stmt = null;
     }
 
     // Actualizar Registro
@@ -57,7 +53,7 @@ class ModeloFormularios
     static public function mdlActualizarRegistro($tabla, $datos)
     {
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre=:nombre, email=:email, pass= :pass WHERE id = :id");
-        
+
         $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
         $stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
         $stmt->bindParam(":pass", $datos["pass"], PDO::PARAM_STR);
