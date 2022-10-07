@@ -18,10 +18,10 @@
                 <?php
                 $registro = ControladorFormularios::ctrRegistro();
                 if ($registro == "ok") {
-                    echo '<div class="alert alert-success"> El usuario se ha registrado con éxito </div>';
+                    echo '<div class="alert alert-success align-items center"> El usuario se ha registrado con éxito </div>';
                 }
                 if ($registro == "error"){                    
-                    echo '<div class="alerta alerta-danger"> Error, no se permiten caracteres especiales </div>';
+                    echo '<div class="alerta alerta-danger align-items center"> Error, no se permiten caracteres especiales </div>';
                     }
                 ?>
 

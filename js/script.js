@@ -21,7 +21,7 @@
 
 			$("#email").parent().after(`
 						
-						<div class="alerta alerta-advertencia align-items center border border-danger border-2 opacity-50">
+						<div class="alerta alerta-advertencia align-items center">
 
 								<strong>ERROR:</strong>
 
