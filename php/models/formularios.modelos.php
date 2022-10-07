@@ -103,8 +103,13 @@ class ModeloContactos
         $stmt->bindParam(":email_c", $datos_contacto["email_c"], PDO::PARAM_STR);
         $stmt->bindParam(":mensaje_c", $datos_contacto["mensaje_c"], PDO::PARAM_STR);
 
-        if ($stmt->execute()) {
-            return "Ok";
+        if ($stmt->execute()) { ?>
+            <script>
+                alert("Contacto agregado con Éxito.!");
+                window.location = "index.php?ruta=inicio";
+            </script>
+
+            <?php return "Ok"; 
         } else {
             print_r(Conexion::conectar()->errorInfo());
         }
