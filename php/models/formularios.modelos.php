@@ -64,7 +64,7 @@ class ModeloFormularios
         $stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);
 
         if ($stmt->execute()) {
-            return "Ok";
+            return "ok";
         } else {
             print_r(Conexion::conectar()->errorInfo());
         }
@@ -82,7 +82,7 @@ class ModeloFormularios
 
         $stmt->bindParam(':id', $valor, PDO::PARAM_STR);
         if ($stmt->execute()) {
-            return "Ok";
+            return "ok";
         } else {
             print_r(Conexion::conectar()->errorInfo());
         }

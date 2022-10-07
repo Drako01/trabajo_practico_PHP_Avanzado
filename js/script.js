@@ -8,7 +8,7 @@ $("#email").change(function () {
 
 
 	$.ajax({
-		url: "/ajax/formularios.alax.php",
+		url: "/ajax/formularios.ajax.php",
 		method: "POST",
 		data: datos,
 		cache: false,
@@ -38,14 +38,14 @@ $("#email").change(function () {
 $("#nombre").change(function () {
 	$(".alerta").remove();
 
-	let name = $(this).val();
+	let nombre = $(this).val();
 
 	let datos_n = new FormData();
-	datos_n.append("validarName", name);
+	datos_n.append("validarName", nombre);
 
 
 	$.ajax({
-		url: "/ajax/formularios.alax.php",
+		url: "/ajax/formularios.ajax.php",
 		method: "POST",
 		data: datos_n,
 		cache: false,

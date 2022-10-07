@@ -3,7 +3,7 @@ if (!isset($_SESSION["validarIngreso"])) {
     echo '<script>window.location = "index.php?ruta=login";</script>';
     return;
 } else {
-    if ($_SESSION["validarIngreso"] == "ok") {
+    if ($_SESSION["validarIngreso"] == "Ok") {
         echo '<script>window.location = "index.php?ruta=inicio";</script>';
         return;
     }
