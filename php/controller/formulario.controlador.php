@@ -6,16 +6,32 @@ class ControladorFormularios
     static public function ctrRegistro()
     {
         if (isset($_POST["nombre"])) {
-            $tabla = "registros";
+            if (
+                preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nombre"]) &&
+                preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["email"]) &&
+                preg_match('/^[0-9a-zA-Z]+$/', $_POST["pass"])
+            ) {
 
-            $datos = array(
-                "nombre" => $_POST["nombre"],
-                "email" => $_POST["email"],
-                "pass" => $_POST["pass"]
-            );
+                $tabla = "registros";
 
-            $respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
-            return $respuesta;
+                $encriptarPassword = crypt($_POST["pass"], '$2a$07$xxxXXXNoVasaAdivinarloNiLocoXXXxxxx$');
+
+
+                $datos = array(
+                    "nombre" => $_POST["nombre"],
+                    "email" => $_POST["email"],
+                    "pass" => $encriptarPassword
+                );
+
+                $respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
+                return $respuesta;
+
+            } else {
+
+                $respuesta = "error";
+                return $respuesta;
+
+            }
         }
     }
 
@@ -34,13 +50,18 @@ class ControladorFormularios
             $tabla = 'registros';
             $item = 'email';
             $valor = $_POST['ingresoEmail'];
-            $pass_ing = $_POST['ingresoPass'];
+            $pass_ing = crypt($_POST["ingresoPass"], '$2a$07$xxxXXXNoVasaAdivinarloNiLocoXXXxxxx$');
 
             $respuesta = ModeloFormularios::mdlSeleccionarRegistro($tabla, $item, $valor);
-            if ($respuesta['email'] == $_POST['ingresoEmail'] && $respuesta['pass'] == md5($pass_ing)) {
+            if ($respuesta['email'] == $valor && $respuesta['pass'] == $pass_ing) {
                 $_SESSION['validarIngreso'] = "Ok";
 
                 echo '<script>
+                if ( window.history.replaceState ) {
+
+                    window.history.replaceState( null, null, window.location.href );
+
+                }
                 window.location = "index.php?ruta=inicio";
                 </script> ';
             } else {
@@ -64,17 +85,17 @@ class ControladorFormularios
     static public function ctrActualizarRegistro()
     {
         if (isset($_POST['actualizarNombre'])) {
-            if ($_POST['actualizarPassword'] != "") {
-                $pass = $_POST['actualizarPassword'];
+            if ($_POST['actualizarPassword'] !== "") {
+                $pass = crypt($_POST["actualizarPassword"], '$2a$07$xxxXXXNoVasaAdivinarloNiLocoXXXxxxx$');
             } else {
-                $pass = $_POST['passwordActual'];
+                $pass = crypt($_POST["passwordActual"], '$2a$07$xxxXXXNoVasaAdivinarloNiLocoXXXxxxx$');
             }
             $tabla = 'registros';
             $datos = array(
                 'id' => $_POST['idUsuario'],
                 'nombre' => $_POST['actualizarNombre'],
                 'email' => $_POST['actualizarEmail'],
-                'pass' => md5($pass)
+                'pass' => $pass
             );
             $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 

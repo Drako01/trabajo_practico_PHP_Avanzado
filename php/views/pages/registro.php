@@ -12,7 +12,7 @@
                     <input autocomplete="off" type="email" name="email" id="email" class="validate" required>
                 </div>
                 <div class="input-field col s12"><label for="pass" class="text-form01">Ingrese su Contraseña: </label>
-                    <input autocomplete="off" type="password" name="pass" id="pass" class="validate" required>
+                    <input autocomplete="off" type="password" name="pass" id="pwd" class="validate" required>
                 </div>
 
                 <?php
@@ -26,6 +26,15 @@
 
                     echo '<div class="alert alert-success"> El usuario se ha registrado con éxito </div>';
                 }
+                if ($registro == "error"){
+                    echo '<script> 
+                    if (window.history.replaceState){
+                        window.history.replaceState(null,null, window.location.href);
+                    }
+                    </script>';
+                    
+                    echo '<div class="alerta alerta-danger"> Error, no se permiten caracteres especiales </div>';
+                    }
                 ?>
 
             </div>
