@@ -231,6 +231,11 @@ table thead tr{
     height: 470px;
 }
 
+.hidden_btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 
 /* Mapa */
 

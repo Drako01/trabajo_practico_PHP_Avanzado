@@ -37,12 +37,12 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistro(null, null);
                         <td><?php echo $value["email"]; ?></td>
                         <td><?php echo $value["fecha"]; ?></td>
                         <td>
-                            <a href="index.php?ruta=editar&id=<?php echo $value["id"]; ?>"><button class="boton">Editar</button></a>
+                            <a href="index.php?ruta=editar&id=<?php echo $value["id"]; ?>"><img src="/img/edit.png" ></a>
                         </td>
                         <td>
                             <form method="post">
                                 <input type="hidden" value="<?php echo $value["id"]; ?>" name="eliminarRegistro">
-                                <button type="submit" class="boton" onclick="return eliminar_cont()">Borrar</button>
+                                <button type="submit" class="hidden_btn" onclick="return eliminar_cont()"><img src="/img/trash.png" ></button>
                                 <?php
                                 $eliminar = new ControladorFormularios();
                                 $eliminar->ctrEliminarRegistro();
