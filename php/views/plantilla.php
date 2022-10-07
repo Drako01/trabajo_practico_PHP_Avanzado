@@ -26,16 +26,10 @@ session_start();
                     <li><a href="index.php?ruta=usuarios_reg">Usuarios</a></li>
                     <?php
                     if (!isset($_SESSION["validarIngreso"])) { ?>
-                        <li><a href="index.php?ruta=registro">Registro</a> </li>
-                        <li><a href="index.php?ruta=login">Iniciar Sessión</a> </li><?php
-                        } else {
-                            if ($_SESSION["validarIngreso"] == "Ok") { ?>
                             <li><a href="index.php?ruta=registro">Registro</a> </li>
-                            <li><a href="index.php?ruta=login">Iniciar Sessión</a> </li>
+                            <li><a href="index.php?ruta=login">Iniciar Sessión</a> </li>                    
                     <?php
-                                                                                                    }
-                                                                                                } ?>
-
+                        }  ?>
                     <li><a href="index.php?ruta=salir">Salir</a></li>
                 </ul>
             </nav>
