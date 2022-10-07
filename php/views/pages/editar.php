@@ -12,7 +12,7 @@ if (isset($_GET["id"])) {
 
 		<input type="text" value="<?php echo $usuario["nombre"]; ?>" placeholder="Escriba su nombre" id="nombre" name="actualizarNombre">
 		<input type="email" value="<?php echo $usuario["email"]; ?>" placeholder="Escriba su email" id="email" name="actualizarEmail">
-		<input type="password"  id="pwd" name="actualizarPassword"  >
+		<input type="password"  id="pwd" name="actualizarPassword" placeholder="Actualizar Password?" >
 		<input type="hidden" name="passwordActual" value="<?php echo $usuario["pass"]; ?>">
 		<input type="hidden" name="idUsuario" value="<?php echo $usuario["id"]; ?>">
 		

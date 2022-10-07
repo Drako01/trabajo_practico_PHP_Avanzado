@@ -85,17 +85,17 @@ class ControladorFormularios
     static public function ctrActualizarRegistro()
     {
         if (isset($_POST['actualizarNombre'])) {
-            if ($_POST['actualizarPassword'] !== "") {
-                $pass = crypt($_POST["actualizarPassword"], '$2a$07$xxxXXXNoVasaAdivinarloNiLocoXXXxxxx$');
+            if ($_POST['actualizarPassword'] != "") {
+                $password = crypt($_POST["actualizarPassword"], '$2a$07$xxxXXXNoVasaAdivinarloNiLocoXXXxxxx$');
             } else {
-                $pass = crypt($_POST["passwordActual"], '$2a$07$xxxXXXNoVasaAdivinarloNiLocoXXXxxxx$');
+                $password = $_POST["passwordActual"];
             }
             $tabla = 'registros';
             $datos = array(
                 'id' => $_POST['idUsuario'],
                 'nombre' => $_POST['actualizarNombre'],
                 'email' => $_POST['actualizarEmail'],
-                'pass' => $pass
+                'pass' => $password
             );
             $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
