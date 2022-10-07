@@ -7,7 +7,7 @@ class ControladorFormularios
     {
         if (isset($_POST["nombre"])) {
             if (
-                preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nombre"]) &&
+                preg_match('/^[_a-zA-Z0-9.-ZñÑáéíóúÁÉÍÓÚ]+[a-zA-Z0-9_]+$/', $_POST["nombre"]) &&
                 preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["email"]) &&
                 preg_match('/^[0-9a-zA-Z]+$/', $_POST["pass"])
             ) {
