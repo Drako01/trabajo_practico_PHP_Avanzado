@@ -15,7 +15,16 @@ class AjaxFormularios{
 		
 		echo json_encode($respuesta);
 	}
+	public $validarName;
+	public function ajaxvalidarName(){
 
+		$item = "nombre";
+		$valor = $this->validarName;
+
+		$respuesta = ControladorFormularios::ctrSeleccionarRegistro($item, $valor);
+		
+		echo json_encode($respuesta);
+	}
 
 }
 
@@ -24,5 +33,13 @@ if(isset($_POST["validarEmail"])){
 	$valEmail = new AjaxFormularios();
 	$valEmail -> validarEmail = $_POST["validarEmail"];
 	$valEmail -> ajaxValidarEmail();
+
+}
+
+if(isset($_POST["validarName"])){
+
+	$valName = new AjaxFormularios();
+	$valName -> validarName = $_POST["validarName"];
+	$valName -> ajaxvalidarName();
 
 }

@@ -1,11 +1,11 @@
-	$("#email").change(function () {
+$("#email").change(function () {
 	$(".alerta").remove();
 
 	let email = $(this).val();
-	
+
 	let datos = new FormData();
 	datos.append("validarEmail", email);
-	
+
 
 	$.ajax({
 		url: "/ajax/formularios.alax.php",
@@ -16,10 +16,10 @@
 		processData: false,
 		dataType: "json",
 		success: function (respuesta) {
-		if (respuesta) {
-			$("#email").val("");
+			if (respuesta) {
+				$("#email").val("");
 
-			$("#email").parent().after(`
+				$("#email").parent().after(`
 						
 						<div class="alerta alerta-advertencia align-items center">
 
@@ -30,7 +30,44 @@
 
 
 					`);
-		}
+			}
 		},
 	});
+});
+
+$("#nombre").change(function () {
+	$(".alerta").remove();
+
+	let name = $(this).val();
+
+	let datos_n = new FormData();
+	datos_n.append("validarName", name);
+
+
+	$.ajax({
+		url: "/ajax/formularios.alax.php",
+		method: "POST",
+		data: datos_n,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType: "json",
+		success: function (respuesta) {
+			if (respuesta) {
+				$("#nombre").val("");
+
+				$("#nombre").parent().after(`
+							
+							<div class="alerta alerta-advertencia align-items center">
+	
+									<strong>ERROR:</strong>
+	
+									Este Usuario ya existe en la base de datos,  por favor ingrese otro diferente
+							</div>
+	
+	
+						`);
+			}
+		},
 	});
+});
