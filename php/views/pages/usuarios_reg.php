@@ -1,7 +1,6 @@
 <?php
 if (!isset($_SESSION["validarIngreso"])) {
-    echo '<script>
-    alert("Debe estar Registrado para ver esta Pagina.!");
+    echo '<script>    
     window.location = "index.php?ruta=login";
     </script>';
     return;

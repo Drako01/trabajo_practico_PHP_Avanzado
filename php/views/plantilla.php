@@ -23,13 +23,15 @@ session_start();
                     <li><a href="index.php?ruta=acerca_de">Acerca de</a> </li>
                     <li><a href="index.php?ruta=ubicacion">Donde Estamos?</a> </li>
                     <li><a href="index.php?ruta=contacto">Contacto</a> </li>
-                    <li><a href="index.php?ruta=usuarios_reg">Usuarios</a></li>
+
                     <?php
                     if (!isset($_SESSION["validarIngreso"])) { ?>
-                            <li><a href="index.php?ruta=registro">Registro</a> </li>
-                            <li><a href="index.php?ruta=login">Iniciar Sessión</a> </li>                    
+                        <li><a href="index.php?ruta=registro">Registro</a> </li>
+                        <li><a href="index.php?ruta=login">Iniciar Sessión</a> </li>
                     <?php
-                        }  ?>
+                    } else { ?>
+                        <li><a href="index.php?ruta=usuarios_reg">Usuarios</a></li>
+                    <?php } ?>
                     <li><a href="index.php?ruta=salir">Salir</a></li>
                 </ul>
             </nav>
