@@ -25,12 +25,10 @@ class ControladorFormularios
 
                 $respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
                 return $respuesta;
-
             } else {
 
                 $respuesta = "error";
                 return $respuesta;
-
             }
         }
     }
@@ -133,19 +131,28 @@ class ControladorContactos
     static public function ctrRegistroContactos()
     {
         if (isset($_POST["nombre_c"])) {
-            $tabla_contacto = "clientes";
+            if (
+                preg_match('/^[a-zA-Z]+$/', $_POST["nombre_c"]) &&
+                preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["email_c"]) 
+            ) {
+                $tabla_contacto = "clientes";
 
-            $datos_contacto = array(
-                "nombre_c" => $_POST["nombre_c"],
-                "apellido_c" => $_POST["apellido_c"],
-                "telefono_c" => $_POST["telefono_c"],
-                "email_c" => $_POST["email_c"],
-                "mensaje_c" => $_POST["mensaje_c"]
-            );
+                $datos_contacto = array(
+                    "nombre_c" => $_POST["nombre_c"],
+                    "apellido_c" => $_POST["apellido_c"],
+                    "telefono_c" => $_POST["telefono_c"],
+                    "email_c" => $_POST["email_c"],
+                    "mensaje_c" => $_POST["mensaje_c"]
+                );
 
 
-            $respuesta = ModeloContactos::mdlRegistroContacto($tabla_contacto, $datos_contacto);
-            return $respuesta;
+                $respuesta = ModeloContactos::mdlRegistroContacto($tabla_contacto, $datos_contacto);
+                return $respuesta;
+            }else {
+
+                $respuesta = "error";
+                return $respuesta;
+            }
         }
     }
 }

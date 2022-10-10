@@ -23,7 +23,13 @@
                     </div>
                     <?php
                     $registro = ControladorContactos::ctrRegistroContactos();
+
+
+                    if ($registro == "error") {
+                        echo '<div class="alerta alerta-danger align-items center"> Error, los datos cargados no cumplen con los requerimientos adecuados </div>';
+                    }
                     ?>
+                    
                     <div class="button-field">
                         <input type="reset" value="Borrar" class="boton" />
                         <input type="submit" value="Enviar" class="boton" />
