@@ -76,8 +76,6 @@ session_start();
     <script src="/js/script.js"></script>
 </body>
 
-
-
 </html>
 <?php
 
