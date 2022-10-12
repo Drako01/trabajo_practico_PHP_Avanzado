@@ -1,1 +1,6 @@
-# trabajo_practico_PHP_Avanzado
+# Trabajo Practico de PHP - Nivel Avanzado
+
+
+
+
+Autor: Alejandro Di Stefano
