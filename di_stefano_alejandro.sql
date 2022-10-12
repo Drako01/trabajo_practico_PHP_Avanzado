@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-10-2022 a las 01:46:04
+-- Tiempo de generación: 12-10-2022 a las 19:20:48
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -41,11 +41,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id_cliente`, `nombre_c`, `apellido_c`, `telefono_c`, `email_c`, `mensaje_c`) VALUES
-(1, 'Alejandro', 'Di Stefano', '1140005555', 'alejandro@mail.com', 'Hola'),
-(2, 'Alejandro', 'Di Stefano', '1140005555', 'alejandro@mail.com', 'Hola'),
-(3, 'fgdf', 'gdfgdf', '46456546', 'dgfdf@sfsdfsd.sdss', 'sdsf'),
-(4, 'fgdf', 'gdfgdf', '46456546', 'dgfdf@sfsdfsd.sdss', 'sdsf'),
-(5, 'fgdf', 'gdfgdf', '46456546', 'dgfdf@sfsdfsd.sdss', 'sdsf');
+(1, 'Alejandro', 'Di Stefano', '1140005555', 'alejandro@mail.com', 'Hola');
 
 -- --------------------------------------------------------
 
@@ -67,7 +63,7 @@ CREATE TABLE `registros` (
 
 INSERT INTO `registros` (`id`, `nombre`, `email`, `pass`, `fecha`) VALUES
 (1, 'Drako_01', 'alejandro@mail.com', '$2a$07$xxxXXXNoVasaAdivinarlezDzrDif8vVO2xNvetgSIiRljF.h6TZ6', '2022-10-07 16:52:29'),
-(5, 'Barby_1982', 'barby@mail.com', '$2a$07$xxxXXXNoVasaAdivinarlei3DL/rhiV9vbvBtuYmDQ5jUdlnqJaP.', '2022-10-07 19:02:57');
+(6, 'Admin', 'admin@admin.com', '$2a$07$xxxXXXNoVasaAdivinarleiLunNKsZee1ycIWmjmw83NlFBQuPdlm', '2022-10-12 17:18:56');
 
 --
 -- Índices para tablas volcadas
@@ -93,13 +89,13 @@ ALTER TABLE `registros`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `registros`
 --
 ALTER TABLE `registros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
