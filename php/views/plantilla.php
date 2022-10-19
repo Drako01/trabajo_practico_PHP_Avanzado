@@ -31,8 +31,9 @@ session_start();
                     <?php
                     } else { ?>
                         <li><a href="index.php?ruta=usuarios_reg">Usuarios</a></li>
+                        <li><a href="index.php?ruta=salir">Salir</a></li>
                     <?php } ?>
-                    <li><a href="index.php?ruta=salir">Salir</a></li>
+                    
                 </ul>
             </nav>
             <div class="fondo_usr">
